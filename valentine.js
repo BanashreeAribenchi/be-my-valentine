@@ -4,9 +4,38 @@ const gif = document.querySelector(".gif");
 const yesBtn = document.querySelector(".yes-btn");
 const noBtn = document.querySelector(".no-btn");
 
+//display new button called cuisine
+const cuisineBtn = document.createElement("cuisineBtn");
+
+cuisineBtn.className = "cuisine-btn";
+cuisineBtn.innerHTML = "random select cuisine";
+cuisineBtn.style.display = "none";
+
+container.appendChild(cuisineBtn);
+
+const cuisines = [
+  "Indian",
+  "Italian",
+  "Spanish",
+  "Japanese",
+  "Chinese",
+  "Thai",
+  "American",
+  "Greek",
+  "Mexico",
+  "Vietnamese",
+];
+
 yesBtn.addEventListener("click", () => {
-  question.innerHTML = "Yay. . . now take me to the dinner!!!";
+  //text and image change after yes button is clciked
+  question.innerHTML = "Yay. . . take me for the dinner!!!";
   gif.src = "hungrytweety.png";
+
+  //hides yes and no button after yes button is clicked
+  yesBtn.style.display = "none";
+  noBtn.style.display = "none";
+
+  cuisineBtn.style.display = "block";
 });
 
 noBtn.addEventListener("mouseover", () => {
@@ -19,20 +48,13 @@ noBtn.addEventListener("mouseover", () => {
 
   noBtn.style.right = randomX + "px";
   noBtn.style.bottom = randomY + "px";
+});
 
-  //   const { width: containerWidth, height: containerHeight } =
-  //     container.getBoundingClientRect();
-  //   const { width: noBtnWidth, height: noBtnHeight } =
-  //     noBtn.getBoundingClientRect();
-  //   const i = Math.floor(Math.random() * 300) + 1;
-  //   const j = Math.floor(Math.random() * 300) + 1;
+cuisineBtn.addEventListener("click", () => {
+  const randomCuisine = Math.floor(Math.random() * cuisines.length);
+  const selectedCuisine = cuisines[randomCuisine];
 
-  //   noBtn.style.right = i + "px";
-  //   noBtn.style.bottom = j + "px";
+  //   alert(`Let's eat ${selectedCuisine} food!!!`);
 
-  //   let i = Math.abs(Math.floor(Math.random() * window.innerWidth - 55));
-  //   let j = Math.abs(Math.floor(Math.random() * window.innerHeight - 21));
-  //   console.log("here", i, j, noBtn.style.left, noBtn.style.top);
-  //   noBtn.style.left = i + "px";
-  //   noBtn.style.top = j + "px";
+  cuisineBtn.innerHTML = `Let's eat ${selectedCuisine} food!!!`;
 });
