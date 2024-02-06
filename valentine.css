@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #2ff3e0;
+  background-color: #fa26a0;
   display: flex;
   justify-content: center;
   min-height: 100vh;
@@ -37,22 +37,22 @@ img {
   gap: 20px 50px;
 }
 
-#yes-btn {
+.yes-btn {
   color: #fa26a0;
   background-color: #ffe619;
   padding: 10px;
   border: 0px;
   border-radius: 50px;
-  font-family: "Sofia", sans-serif;
-  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-#no-btn {
+.no-btn {
+  position: relative;
   color: #fa26a0;
   background-color: #ffe619;
   padding: 10px;
   border: 0px;
   border-radius: 50px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bolder;
 }
